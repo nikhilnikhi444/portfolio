@@ -1,0 +1,252 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Playfair Display', serif;
+}
+#container{
+    width: 100%;
+    height: 100vh; /* 1vh = 19.2 */
+    position: relative; /* position relative to its normal postion */
+    background-color: white;
+
+}
+.navbar{
+    width: 85%;
+    display: flex;
+    justify-content: space-between; /* to provide space between child tags*/
+    margin-left: 100px;
+    align-items: center; /* to place contents vertically center*/
+   
+}
+#logo{
+    width: 130px;
+}
+.linkitem{
+    display: inline-block;
+    list-style: none;/* can remove dot*/
+    margin: 10px 20px;
+}
+.links{
+     text-decoration: none;
+     color: black;
+     font-weight: bolder;
+}
+.links:hover{
+    color: red;
+    
+
+}
+.title{
+    margin-left: 8%;
+    margin-top: 13%;
+}
+.title_h1{
+    font-size: 53px;
+    margin-bottom: 20px;
+}
+#lastname{
+    color: orange;
+}
+#cv{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.images{
+    width: 45%;
+    height: 85%;
+    position: absolute;
+    right: 30px;
+    bottom: 0px;
+
+}
+.imagegroup{
+    height: 100%;
+    position: absolute;
+    bottom: 0px;/* initial value*/
+    left: 50%;/* initial value*/
+    transform: translateX(-50%);/* to remove the effect of left 50%*/
+    transition: bottom 1s, left 2s; /* time to taken change */
+}
+.images:hover #girl{
+    left: 40%;
+}
+.images:hover #shape{
+    bottom: 40px;
+}
+/* about section*/
+#about{
+    margin: 5% 8% 0% 8%;
+
+}
+.heading{
+    text-align: center;
+   
+}
+.heading h1{
+    font-size: 32px;
+}
+.heading span{
+    color: green;
+    font-size: 20px;
+}
+.about-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);/* 1fr = 225px*/
+    column-gap: 2rem; /* 1rem = 16px*/
+    margin-top: 2.5rem;
+}
+.about-img img{
+    width: 80%;
+    border-radius: 20px;
+}
+.about-para p{
+    text-align: justify;/* to properly allign the content */
+    font-size: 20px;
+}
+.information{
+    margin-top: 20px;
+}
+.info-box{
+    
+    margin-bottom: 1rem;
+}
+.info-box span{
+    margin-left: 1rem;
+    font-size: 20px;
+}
+/*skill section*/
+#skills{
+    margin-top: 100px;
+}
+.skill-content span{
+    text-align: center;
+    color: green;
+
+}
+
+.skill-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+}
+.progress{
+    width: 78%;
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-between; /*to create space between*/
+        
+}
+.first-line{
+    width: 500px;
+    height: 7px;
+    background-color: gray;
+    position: absolute;
+    border-radius: 3px;
+}
+
+#second-line1{
+    width: 475px;
+    height: 7px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 3px;
+}
+
+
+#second-line2{
+    width: 440px;
+    height: 7px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 3px;
+}
+
+
+#second-line3{
+    width: 445px;
+    height: 7px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 3px;
+}
+
+#second-line4{
+    width: 425px;
+    height: 7px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 3px;
+}
+.skill-bar{
+    margin-left: 100px;
+}
+.h4{
+    margin-top: -35px;
+}
+/* contact section */
+#contact{
+    margin-top: 50px;
+}
+#icons{
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+    
+.linkicons,.up-arrow{
+    width: 50px;
+    height: 50px;
+    margin-left: 25px;
+    border-radius: 50px;
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.linkicons:hover{
+    background-image: linear-gradient(to bottom right , yellow, rgb(225 , 64, 0)  );
+}
+
+.linkicons i{
+    color: black;
+}
+.linkicons:hover i{
+    color: white;
+    animation: shake 0.75s;
+}
+@keyframes shake{
+    10%{
+        transform: rotate(15deg);
+    }
+    20%{
+        transform: rotate(-15deg);
+    }
+    30%{
+       transform: rotate(15deg);
+    }
+    40%{
+       transform: rotate(-15deg);
+    }
+}
+/* end portion*/
+#h5{
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+.up-arrow{
+    background-image: linear-gradient(to bottom right , yellow, rgb(225 , 64, 0)  );
+    float: right;
+}
+html{
+    scroll-behavior: smooth;
+}
