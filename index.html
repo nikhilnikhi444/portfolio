@@ -8,8 +8,8 @@
     <meta name="keywords" content="Portfolio, Full Stack Developer, MERN Stack, React Developer, Node.js, Web Development, JavaScript">
     <meta name="author" content="Ana Steel">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./styleindex.css">
+    <!-- Stylesheet with Cache Busting -->
+    <link rel="stylesheet" href="./styleindex.css?v=2.1">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,14 +40,32 @@
                 <li><a class="nav-link" href="#projects">Projects</a></li>
                 <li><a class="nav-link" href="#experience">Journey</a></li>
                 <li><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="mobile-theme-row">
+                    <span class="mobile-theme-label"><i class="fa-solid fa-circle-half-stroke"></i> Dark Mode</span>
+                    <label class="theme-switch" for="mobile-theme-checkbox">
+                        <input type="checkbox" id="mobile-theme-checkbox" class="theme-toggle-input" aria-label="Toggle Dark and Light Mode">
+                        <span class="theme-slider">
+                            <i class="fa-solid fa-sun sun-icon"></i>
+                            <i class="fa-solid fa-moon moon-icon"></i>
+                            <span class="switch-ball"></span>
+                        </span>
+                    </label>
+                </li>
             </ul>
 
             <!-- Navbar Actions -->
             <div class="nav-actions">
-                <!-- Theme Toggle Button -->
-                <button class="theme-btn" id="theme-toggle" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
+                <!-- Modern Dark / Light Mode Toggle Switch -->
+                <div class="theme-switch-wrapper" title="Switch Theme (Dark / Light)">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" class="theme-toggle-input" aria-label="Toggle Dark and Light Mode">
+                        <span class="theme-slider">
+                            <i class="fa-solid fa-sun sun-icon"></i>
+                            <i class="fa-solid fa-moon moon-icon"></i>
+                            <span class="switch-ball"></span>
+                        </span>
+                    </label>
+                </div>
 
                 <!-- Mobile Hamburger Menu Button -->
                 <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
@@ -814,6 +832,11 @@
         </div>
     </footer>
 
+    <!-- Floating Quick Theme Switch Button -->
+    <button id="floating-theme-toggle" class="floating-theme-btn" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
     <!-- Back to Top Floating Button -->
     <a href="#home" id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
@@ -822,7 +845,7 @@
     <!-- Interactive Toast Message -->
     <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
 
-    <!-- JavaScript Interactive Controller -->
-    <script src="./script.js"></script>
+    <!-- JavaScript Interactive Controller with Cache Busting -->
+    <script src="./script.js?v=2.1"></script>
 </body>
 </html>

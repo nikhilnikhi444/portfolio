@@ -296,27 +296,153 @@ button, input, textarea {
     gap: 16px;
 }
 
-/* Theme Toggle Button */
-.theme-btn {
-    width: 40px;
-    height: 40px;
+/* Modern Theme Switch Component */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.theme-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e2e8f0;
+    border: 2px solid #cbd5e1;
+    border-radius: 30px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.theme-slider .sun-icon {
+    font-size: 12px;
+    color: #f59e0b;
+    z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.theme-slider .moon-icon {
+    font-size: 12px;
+    color: #94a3b8;
+    z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6;
+}
+
+.switch-ball {
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    bottom: 2px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+/* Checked State (Dark Mode Active) */
+.theme-switch input:checked + .theme-slider {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.theme-switch input:checked + .theme-slider .sun-icon {
+    opacity: 0.4;
+    transform: rotate(-30deg) scale(0.85);
+}
+
+.theme-switch input:checked + .theme-slider .moon-icon {
+    color: #38bdf8;
+    opacity: 1;
+    transform: rotate(0deg) scale(1.1);
+    text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+}
+
+.theme-switch input:checked + .theme-slider .switch-ball {
+    transform: translateX(30px);
+    background: #0f172a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.theme-switch:hover .theme-slider {
+    border-color: var(--accent);
+}
+
+.theme-switch input:focus-visible + .theme-slider {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Mobile Theme Switch Row in Nav Drawer */
+.mobile-theme-row {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 18px;
+    margin-top: 10px;
+    border-top: 1px solid var(--card-border);
+}
+
+.mobile-theme-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Floating Quick Theme Switch Button */
+.floating-theme-btn {
+    position: fixed;
+    bottom: 90px;
+    left: 30px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
-    cursor: pointer;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    z-index: 998;
 }
 
-.theme-btn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    transform: rotate(20deg);
+.floating-theme-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: var(--shadow-accent);
 }
 
 /* Hamburger for Mobile */
@@ -1636,6 +1762,9 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+    .mobile-theme-row {
+        display: flex;
+    }
     .hamburger {
         display: flex;
     }
